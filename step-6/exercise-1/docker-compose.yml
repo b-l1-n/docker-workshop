@@ -1,0 +1,16 @@
+version: '3'
+services:
+  microservice-1:
+    image: java-service:1.0.0
+    hostname: java-service-1
+    ports:
+      - "80:8080"
+    volumes:
+      - ./data:/root
+  microservice-2:
+    build:
+      context: ./java_service
+    ports:
+      - "81:8080"
+    volumes:
+      - ./data:/root
